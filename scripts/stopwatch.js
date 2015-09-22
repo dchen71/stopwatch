@@ -5,6 +5,11 @@ var x = 0 //successful stop
 var y = 0 //total stop
 var running = true
 
+//Selects the canvas
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+
 // define helper function format that converts time
 // in tenths of seconds into formatted string A:BC.D
 function format(t){  
@@ -17,16 +22,19 @@ function format(t){
     
 // define event handlers for buttons; "Start", "Stop", "Reset"
 function start_handler(){   
-    running = True
+    running = true
     timer.start()
 }
 
 function stop_handler(){
-    if(running == True):
-        if(cTime %10 == 0):
+    if(running == true){
+
+        if(cTime %10 == 0){
             x+= 1
+        }
         y += 1
         running = False
+    }
     timer.stop()
 }
 
