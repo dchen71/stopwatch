@@ -23,7 +23,7 @@ function format(t){
 // define event handlers for buttons; "Start", "Stop", "Reset"
 function start_handler(){   
     running = true
-    timer.start()
+    timer = setInterval(function(){timer_handler()}, 100)
 }
 
 function stop_handler(){
@@ -35,14 +35,14 @@ function stop_handler(){
         y += 1
         running = false
     }
-    timer.stop()
+    clearInterval(timer);
 }
 
 function reset_handler(){
     cTime = 0
     x = 0
     y = 0
-    timer.stop()
+    clearInterval(timer);
 }
 
 // define event handler for timer with 0.1 sec interval
@@ -59,7 +59,7 @@ function draw_handler(canvas){
         
 // create frame
 frame = simplegui.create_frame("Stopwatch: The Game", 400, 200)
-timer = simplegui.create_timer(100, timer_handler)
+var timer = setInterval(function(){timer_handler()}, 100)
 
 // register event handlers
 frame.set_draw_handler(draw_handler)
