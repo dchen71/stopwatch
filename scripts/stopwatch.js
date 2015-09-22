@@ -63,10 +63,6 @@ var timer = setInterval(function(){timer_handler()}, 100)
 
 // register event handlers
 frame.set_draw_handler(draw_handler)
-frame.add_button("Start", start_handler)
-frame.add_button("Stop", stop_handler)
-frame.add_button("Reset", reset_handler)
-
 
 // start frame
 frame.start()
