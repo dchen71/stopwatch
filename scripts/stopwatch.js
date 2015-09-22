@@ -33,7 +33,7 @@ function stop_handler(){
             x+= 1
         }
         y += 1
-        running = False
+        running = false
     }
     timer.stop()
 }
@@ -49,7 +49,6 @@ function reset_handler(){
 function timer_handler(){
     cTime += 1
 }
-    
 
 // define draw handler
 function draw_handler(canvas){
@@ -57,9 +56,7 @@ function draw_handler(canvas){
     canvas.draw_text('Success: '+ str(x),(280,40),20,"white")
     canvas.draw_text('Total: ' + str(y),(280,20),20,"white")
 }
-
-    
-    
+        
 // create frame
 frame = simplegui.create_frame("Stopwatch: The Game", 400, 200)
 timer = simplegui.create_timer(100, timer_handler)

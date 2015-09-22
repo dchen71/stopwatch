@@ -4,9 +4,14 @@
 	<title>Stopwatch</title>
 </head>
 <body>
+	<div class="buttons">
+		<button type="button" onclick='start_handler()'>Start</button>
+		<button type="button" onclick="stop_handler()">Stop</button>
+		<button type="button" onclick="reset_handler()">Reset</button>
+	</div>
+
 	<canvas id="myCanvas" width="400" height="200" style="border:1px solid #d3d3d3;">
 	Your browser does not support the HTML5 canvas tag.</canvas>
-
 
 	<script type="text/javascript" src="scripts/stopwatch.js"></script>
 </body>
