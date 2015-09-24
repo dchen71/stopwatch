@@ -51,11 +51,11 @@ function timer_handler(){
 
 // define draw handler
 function draw_handler(canvas){
-    canvas.fillStyle = "white";
+    canvas.fillStyle = "black";
     canvas.font = '20px Comic Sans MS';
-    canvas.fill_text(format(cTime), 180,100);
-    canvas.fill_text('Success: '+ String(x),280,40);
-    canvas.fill_text('Total: ' + String(y),280,20);
+    canvas.fillText(format(cTime), 180,100);
+    canvas.fillText('Success: '+ String(x),280,40);
+    canvas.fillText('Total: ' + String(y),280,20);
 }
         
 // create frame
@@ -64,6 +64,3 @@ var timer = setInterval(function(){timer_handler()}, 100);
 // register event handlers
 draw_handler(ctx);
 
-// start frame
-frame.start()
-timer.start()
