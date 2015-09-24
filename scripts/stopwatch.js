@@ -6,7 +6,8 @@ var y = 0; //total stop
 var running = true;
 
 //Selects the canvas
-var ctx = document.getElementById("myCanvas").getContext("2d");
+var box = document.getElementById("myCanvas");
+var ctx = box.getContext("2d");
 
 
 // define helper function format that converts time
@@ -50,16 +51,16 @@ function timer_handler(){
 
 // define draw handler
 function draw_handler(canvas){
+    canvas.clearRect(0, 0, box.width, box.height);
     canvas.fillStyle = "black";
     canvas.font = '20px Comic Sans MS';
     canvas.fillText(format(cTime), 150,100);
     canvas.fillText('Success: '+ String(x),10,40);
     canvas.fillText('Total: ' + String(y),10,20);
+    console.log('drawing');
 }
         
-// create frame
+// create frame/handler
 var timer = setInterval(function(){timer_handler()}, 100);
-
-// register event handlers
-draw_handler(ctx);
+var draw = setInterval(function(){draw_handler(ctx)},1);
 
