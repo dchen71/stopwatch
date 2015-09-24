@@ -6,8 +6,7 @@ var y = 0; //total stop
 var running = true;
 
 //Selects the canvas
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
+var ctx = document.getElementById("myCanvas").getContext("2d");
 
 
 // define helper function format that converts time
