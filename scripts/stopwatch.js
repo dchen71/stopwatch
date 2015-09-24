@@ -53,9 +53,9 @@ function timer_handler(){
 function draw_handler(canvas){
     canvas.fillStyle = "black";
     canvas.font = '20px Comic Sans MS';
-    canvas.fillText(format(cTime), 180,100);
-    canvas.fillText('Success: '+ String(x),280,40);
-    canvas.fillText('Total: ' + String(y),280,20);
+    canvas.fillText(format(cTime), 150,100);
+    canvas.fillText('Success: '+ String(x),10,40);
+    canvas.fillText('Total: ' + String(y),10,20);
 }
         
 // create frame
