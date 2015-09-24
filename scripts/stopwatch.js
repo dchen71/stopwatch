@@ -45,7 +45,6 @@ function reset_handler(){
     cTime = 0;
     x = 0;
     y = 0;
-    clearInterval(timer);
 }
 
 // define event handler for timer with 0.1 sec interval
