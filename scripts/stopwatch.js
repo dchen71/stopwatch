@@ -1,3 +1,5 @@
+//Implements a stopwatch mini game which allows the user to start/stop the stopwatch and gain a point whenever it is stopped ona full second
+
 
 // define global variables
 var cTime = 0;
@@ -14,16 +16,18 @@ var ctx = box.getContext("2d");
 // in tenths of seconds into formatted Stringing A:BC.D
 function format(t){  
     var d = t % 10;
-    var c = ((t - d) % 100) /10;
-    var b = (t / 100) % 6;
+    var c = Math.round(((t - d) % 100) /10);
+    var b = Math.round((((t / 100) % 6) * 10) * 10)/10;
     var a = Math.floor(t/600);
-    return(String(a) + ':' + String(b) + String(c) + '.' + String(d));
+    return(String(a) + ':' + String(b));
 }
     
 // define event handlers for buttons; "Start", "Stop", "Reset"
 function start_handler(){   
-    running = true;
-    timer = setInterval(function(){timer_handler()}, 100);
+    if(running != true){
+        running = true;
+        timer = setInterval(function(){timer_handler()}, 100);
+    }
 }
 
 function stop_handler(){
@@ -57,10 +61,9 @@ function draw_handler(canvas){
     canvas.fillText(format(cTime), 150,100);
     canvas.fillText('Success: '+ String(x),10,40);
     canvas.fillText('Total: ' + String(y),10,20);
-    console.log('drawing');
 }
         
-// create frame/handler
+// create time/drawing handlers
 var timer = setInterval(function(){timer_handler()}, 100);
-var draw = setInterval(function(){draw_handler(ctx)},1);
+var draw = setInterval(function(){draw_handler(ctx)},10);
 
